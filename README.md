@@ -1,83 +1,117 @@
 # worknoon-wordpress-assessment
 
-# WordPress Landing Page Demo
+## Overview
 
-This project is a responsive landing page built using WordPress and Elementor.
-
-It includes a complete layout structure with modern UI sections and is optimized for both desktop, tablet, and mobile devices.
+This project is a responsive landing page built using WordPress and Elementor as part of the Worknoon assessment. The goal was to deliver a clean, modern, and responsive layout while maintaining scalability, performance awareness, and SEO readiness.
 
 ---
 
 ## Features
 
-* Hero section with call-to-action (CTA)
-* Services section
-* Testimonials section
+* Hero section with strong call-to-action (CTA)
+* Services section showcasing offerings
+* Testimonials section for social proof
 * Contact form integration
-* Fully responsive design
+* Fully responsive across mobile, tablet, and desktop
 
 ---
 
-## Project Setup (Using Duplicator)
+## System Architecture Overview
 
-This project was exported using the **Duplicator plugin**, so you can easily set it up locally or on a server.
+The project is built using a containerized WordPress environment to ensure consistency and portability.
 
-### Requirements
+* **Frontend**: WordPress + Elementor (visual builder)
+* **Backend**: PHP (WordPress core)
+* **Database**: MySQL
+* **Environment**: Docker
+* **Version Control**: GitHub repository
+
+This setup ensures the project can be easily reproduced and deployed across different environments.
+
+---
+
+## Tools & Technologies Used
+
+* **WordPress**: Content management system for rapid development
+* **Elementor**: Visual page builder for responsive UI design
+* **JetFormBuilder**: Contact form handling
+* **LiteSpeed Cache**: Performance optimization (caching, minification)
+* **Google Site Kit**: Analytics and performance insights
+* **Docker**: Containerized development environment for consistency
+
+---
+
+## Setup Instructions
+
+### Option 1: Using Duplicator (Recommended)
+
+#### Requirements
 
 * PHP 7.4+
 * MySQL / MariaDB
-* Local server (XAMPP, MAMP, or Laragon) OR live hosting
+* Local server (XAMPP, MAMP, Laragon) OR Docker
+
+#### Steps
+
+1. Clone this repository
+2. Place files in your server directory (e.g., `htdocs/` or `www/`)
+3. Create a new empty database
+4. Visit:
+
+   ```
+   http://localhost/your-folder-name/installer.php
+   ```
+5. Enter database credentials and run deployment
+6. Access WordPress dashboard:
+
+   ```
+   http://localhost/your-folder-name/wp-admin
+   ```
 
 ---
 
-## Installation Steps
+## Challenges Encountered & Solutions
 
-1. Clone or download this repository:
+### 1. Docker Environment Conflicts
 
-2. Move the files into your local server directory:
+* **Issue**: Running multiple WordPress instances caused port conflicts
+* **Solution**: Assigned unique ports and container names for each instance
 
-   * Example:
+### 2. Data Persistence Issues
 
-     * `htdocs/` (XAMPP)
-     * `www/` (Laragon)
+* **Issue**: Containers resetting caused loss of WordPress data
+* **Solution**: Implemented volume mapping to persist files and database
 
-3. Create a new database:
+### 3. "Bad Request" Header Error
 
-   * Open phpMyAdmin
-   * Create a new empty database (e.g. `landing_demo`)
+* **Issue**: Browser cookies exceeded header size limits
+* **Solution**: Cleared browser cookies and ensured isolated environments per project
 
-4. Run the installer:
+### 4. File Access for Version Control
 
-   * Open your browser and go to:
-
-     ```
-     http://localhost/your-folder-name/installer.php
-     ```
-
-5. Follow the Duplicator setup steps:
-
-   * Enter your database credentials
-   * Click **Run Deployment**
-
-6. After installation:
-
-   * Log in to WordPress admin using the credentials provided below
+* **Issue**: WordPress files were initially stored inside Docker volumes
+* **Solution**: Mapped WordPress directory to local project folder for GitHub tracking
 
 ---
 
-## Admin Access
+## SEO & Schema Considerations
 
-After setup, access the dashboard via:
-
-```
-http://localhost/your-folder-name/wp-admin
-```
+* Structured content hierarchy (H1, H2, H3) for clarity
+* Clean section-based layout for crawlability
+* Mobile responsiveness to meet Google indexing requirements
+* Performance optimization via caching and minimized assets
 
 ---
 
-## Responsiveness
+## Design & Responsiveness
 
-The design is optimized for:
+The layout was built using a modular approach to ensure:
+
+* Reusability of sections
+* Easy scalability into a multi-page website
+* Consistent spacing, typography, and alignment
+
+Responsive design was tested across:
 
 * Mobile devices
 * Tablets
@@ -87,13 +121,28 @@ The design is optimized for:
 
 ## Notes for Reviewers
 
-* This is a demo project focused on layout structure and responsiveness
-* Content is demo content
-* Built to showcase:
+* This project focuses on layout structure, responsiveness, and system thinking
+* Built with scalability and SEO readiness in mind
+* Demonstrates practical use of WordPress in a containerized environment
 
-  * UI/UX layout skills
-  * WordPress builder proficiency
-  * Clean section structuring
+---
+
+## Plugins
+
+* Elementor (UI/UX design)
+* JetFormBuilder (forms)
+* LiteSpeed Cache (performance)
+* Google Site Kit (analytics)
+
+---
+
+## Admin Access
+
+```
+URL: /wp-admin
+Username: tobi
+Password: worknoon
+```
 
 ---
 
@@ -101,18 +150,4 @@ The design is optimized for:
 
 **Tobi John**
 Frontend Developer & WordPress Specialist
-
-Portfolio: https://tobijohn.com
-
----
-
-## Plugins
-
-Elementor Page Builder for UI design
-Litespeed cache for Optimization
-Google Site Kit for analytics
-JetFormBuilder for Contact form
-
-## Login
-Username: tobi
-password: worknoon
+Portfolio: [https://tobijohn.com](https://tobijohn.com)
