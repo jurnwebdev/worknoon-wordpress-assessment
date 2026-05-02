@@ -1,0 +1,12 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Worknoon",
+  "url": "https://worknoon.com",
+  "logo": "https://worknoon.com/logo.png",
+  "sameAs": [
+    "https://facebook.com/worknoon",
+    "https://twitter.com/worknoon",
+    "https://linkedin.com/company/worknoon"
+  ]
+}
